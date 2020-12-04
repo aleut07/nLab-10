@@ -44,6 +44,59 @@ public class TestSelectionSort {
   public TestSelectionSort() {
   }
 
+
+  public void testMixed(){
+        int[] arr = new int[5];
+        arr[0] = -8;
+        arr[1] = 9;
+        arr[2] = -7;
+        arr[3] = 10;
+        arr[4] = -2;
+
+        SelectionSort sort = new SelectionSort();
+        sort.basicSelectionSort(arr);
+
+        int[] Sortedarr = new int[5];
+        Sortedarr[0] = -8;
+        Sortedarr[1] = -7;
+        Sortedarr[2] = -2;
+        Sortedarr[3] = 9;
+        Sortedarr[4] = 10;
+
+        assertSame("Failed Test", Sortedarr[4], arr[4]);
+        assertSame("Failed Test", Sortedarr[3], arr[3]);
+        assertSame("Failed Test", Sortedarr[2], arr[2]);
+        assertSame("Failed Test", Sortedarr[1], arr[1]);
+        assertSame("Failed Test", Sortedarr[0], arr[0]);
+
+    }
+
+    public void testDuplicates(){
+    	int[] arr = new int[5];
+        arr[0] = 8;
+        arr[1] = 9;
+        arr[2] = 8;
+        arr[3] = 10;
+        arr[4] = 9;
+
+        SelectionSort sort = new SelectionSort();
+        sort.basicSelectionSort(arr);
+
+        int[] Sortedarr = new int[5];
+        Sortedarr[0] = 8;
+        Sortedarr[1] = 8;
+        Sortedarr[2] = 9;
+        Sortedarr[3] = 9;
+        Sortedarr[4] = 10;
+
+        assertSame("Failed Test", Sortedarr[4], arr[4]);
+        assertSame("Failed Test", Sortedarr[3], arr[3]);
+        assertSame("Failed Test", Sortedarr[2], arr[2]);
+        assertSame("Failed Test", Sortedarr[1], arr[1]);
+        assertSame("Failed Test", Sortedarr[0], arr[0]);
+
+    }
+
   public void testPositive(){
       int[] arr = new int[5];
       arr[0] = 8;
